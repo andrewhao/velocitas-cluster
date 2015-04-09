@@ -1,11 +1,18 @@
 web:
   image: andrewhao/velocitas-core:latest
   ports:
-    - "80:3000"
+    - "3000:3000"
   links:
     - db
   env_file:
     - ".env.web"
+
+proxy:
+  build: .
+  ports:
+    - "80:80"
+  links:
+    - web
 
 db:
   image: mdillon/postgis:latest
