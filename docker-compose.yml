@@ -8,7 +8,7 @@ web:
     - ".env.web"
 
 proxy:
-  build: andrewhao/velocitas-proxy:latest
+  image: andrewhao/velocitas-proxy:latest
   ports:
     - "80:80"
   links:
